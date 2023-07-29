@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: survey_details_deployment
+  name: surveyform-backend-deployment
+  namespace: surveyform
   labels:
-    app: survey_details
+    app: surveyform-backend
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: survey_details
+      app: surveyform-backend
   template:
     metadata:
       labels:
-        app: survey_details
+        app: surveyform-backend
     spec:
       containers:
-        - name: nginx
-          image: nginx:1.14.2
+        - name: surveyform
+          image: devbravo1996/surveyform:0.1
           ports:
-            - containerPort: 80
+            - containerPort: 8080

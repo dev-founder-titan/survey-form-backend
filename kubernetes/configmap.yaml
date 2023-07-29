@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: surveyform-backend-configmap
+  namespace: surveyform-backend
+data:
+  DB_URL: localhost:3306
