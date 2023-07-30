@@ -10,9 +10,8 @@ pipeline{
                 script {
                     withCredentials([usernamePassword(credentialsId: 'DOCKERHUB_PASS', passwordVariable: 'C_PASS', usernameVariable: 'C_USER')]) {
                         checkout scm
-                        sh "rm -rf *.war"
-                        sh 'cd survey-form-backend'
-                        sh 'mvn clean package'
+                        sh "rm -rf *.jar"
+                        sh 'mvn clean package -DskipTests=true'
                         sh 'echo ${BUILDVERSION}'
                         println(C_PASS+" "+C_USER)
                         sh 'docker login -u devbravo1996 -p ${C_PASS}'
@@ -30,7 +29,7 @@ pipeline{
         }
         stage("Deploying to Rancher") {
             steps {
-                sh 'kubectl set image deployment/surveyform-backend surveyform-backend=devbravo1996/surveyformbackend:${BUILDVERSION} -n surveyform'
+                sh 'kubectl set image deployment/surveyform-backend-deployment surveyform-backend=devbravo1996/surveyformbackend:${BUILDVERSION} -n surveyform-backend'
             }
         }
     }
