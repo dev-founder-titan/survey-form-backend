@@ -4,12 +4,12 @@ metadata:
   name: surveyform-backend-ingress
   namespace: surveyform-backend
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /$2/
 spec:
   rules:
     - http:
         paths:
-          - path: /details
+          - path: /api(/|$)(.*)
             pathType: Prefix
             backend:
               service:
