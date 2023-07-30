@@ -4,4 +4,4 @@ metadata:
   name: surveyform-backend-configmap
   namespace: surveyform-backend
 data:
-  DB_URL: database-2.czkuijt2ttps.us-east-1.rds.amazonaws.com
+  DB_URL: jdbc:mysql://database-2.czkuijt2ttps.us-east-1.rds.amazonaws.com:3306/surveydb

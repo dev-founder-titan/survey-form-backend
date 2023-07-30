@@ -2,17 +2,17 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: surveyform-backend-ingress
-  namespace: surveyform
+  namespace: surveyform-backend
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
     - http:
         paths:
-          - path: /
+          - path: /details
             pathType: Prefix
             backend:
               service:
-                name: surveyform-backend
+                name: surveyform-backend-service
                 port:
                   number: 8080

@@ -1,7 +1,7 @@
-FROM openjdk:11
+FROM adoptopenjdk/openjdk11:latest
 
 COPY target/form-0.0.1-SNAPSHOT.jar /usr/src/app/form.jar
 WORKDIR /usr/src/app
 
-RUN java -jar form.jar
+CMD ["java","-jar","/usr/src/app/form.jar"]
 EXPOSE 8080

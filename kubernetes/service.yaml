@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: surveyform-backend-service
-  namespace: surveyform
+  namespace: surveyform-backend
 spec:
   selector:
     app: surveyform-backend

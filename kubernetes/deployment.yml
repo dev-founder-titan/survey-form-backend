@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: surveyform-backend-deployment
-  namespace: surveyform
+  namespace: surveyform-backend
   labels:
     app: surveyform-backend
 spec:
@@ -16,7 +16,12 @@ spec:
         app: surveyform-backend
     spec:
       containers:
-        - name: surveyform
-          image: devbravo1996/surveyform:0.1
+        - name: surveyform-backend
+          image: devbravo1996/surveyformbackend:1.0.0
+          envFrom:
+            - configMapRef:
+                name: surveyform-backend-configmap
+            - secretRef:
+                name: surveyform-backend-secret
           ports:
             - containerPort: 8080
