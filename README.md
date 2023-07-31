@@ -1,8 +1,8 @@
 ﻿# survey-form-backend
 As part of this assignment we have created a rest microservice which is responsible for persisting suvey information to MySQL database hosted in AWS RDS.
 Rest microservice is based on Spring Boot running in embedded tomcat. Maven is being used as the build tool.
-Application URL: https://ec2-3-222-240-66.compute-1.amazonaws.com/api/details
-Jenkins URL: http://34.228.87.20:8080/job/SurveyFormBackend/
+1) Application URL: https://ec2-3-222-240-66.compute-1.amazonaws.com/api/details
+2) Jenkins URL: http://34.228.87.20:8080/job/SurveyFormBackend/
 
 CRUD OPERATIONS
 1) Get /api/details/all -> This particular REST endpoint is used for displaying all the surveys which have been recorded till date.
