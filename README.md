@@ -66,7 +66,7 @@ Service:
 # Jenkins Configuration
 For creating the standalone jar for the spring boot application using maven we can use command: mvn clean package -DskipTests=true
 1) Jenkins file have different stages present for building the application and then deploying it to kubernetes environment.
-2) We can trigger the jenkins job manually by using build with parameters option.
+2) We can trigger the jenkins job manually by using build now option.
 
 ![image](https://github.com/dev-founder-titan/survey-form-backend/assets/79055244/017a64ae-d166-4aa4-8d99-3101307d7f2a)
 
