@@ -7,6 +7,7 @@ import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -32,12 +33,12 @@ public class SurveyController {
     }
 
     @PostMapping("/details")
-    public SurveyDetailsDto postDetails(@RequestBody SurveyDetailsDto surveyDetailsDto) {
+    public SurveyDetailsDto postDetails(@RequestBody @Valid SurveyDetailsDto surveyDetailsDto) {
         return surveyService.postSurveyDetails(surveyDetailsDto);
     }
 
     @PutMapping("/details/{id}")
-    public SurveyDetailsDto updateDetails(@RequestBody SurveyDetailsDto surveyDetailsDto, @PathVariable("id") int id) {
+    public SurveyDetailsDto updateDetails(@RequestBody @Valid SurveyDetailsDto surveyDetailsDto, @PathVariable("id") int id) {
         return surveyService.updateSurveyDetails(surveyDetailsDto,id);
     }
 
