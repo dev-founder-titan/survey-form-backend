@@ -9,6 +9,7 @@ import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Getter
@@ -42,7 +43,7 @@ public class SurveyDetailsDto {
     @NotEmpty(message = "cannot be empty/null")
     private String email;
 
-    @NotEmpty(message = "cannot be empty/null")
+    @NotNull(message = "cannot be null")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
