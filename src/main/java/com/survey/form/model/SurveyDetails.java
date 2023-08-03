@@ -29,6 +29,12 @@ public class SurveyDetails {
     @Column(name = "street_address")
     private String streetAddress;
 
+    @Column(name = "city")
+    private String city;
+
+    @Column(name = "state")
+    private String state;
+
     @Column(name = "zip")
     private String zip;
 

@@ -9,6 +9,7 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 
 @Getter
@@ -18,18 +19,31 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class SurveyDetailsDto {
 
+    @NotEmpty(message = "cannot be empty/null")
     private String firstName;
 
+    @NotEmpty(message = "cannot be empty/null")
     private String lastName;
 
+    @NotEmpty(message = "cannot be empty/null")
     private String streetAddress;
 
+    @NotEmpty(message = "cannot be empty/null")
+    private String city;
+
+    @NotEmpty(message = "cannot be empty/null")
+    private String state;
+
+    @NotEmpty(message = "cannot be empty/null")
     private String zip;
 
+    @NotEmpty(message = "cannot be empty/null")
     private String telephoneNo;
 
+    @NotEmpty(message = "cannot be empty/null")
     private String email;
 
+    @NotEmpty(message = "cannot be empty/null")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
